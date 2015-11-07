@@ -12,6 +12,11 @@ import android.widget.TextView;
 
 public class sign_up extends AppCompatActivity {
     String nameStr;
+    String mobileStr;
+    String emailStr;
+    String postcodeStr;
+    String TAG;
+    //String interest;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,16 +24,24 @@ public class sign_up extends AppCompatActivity {
 
 
 
-
-
         Button sign_up=(Button)findViewById(R.id.sign_up_button);
         sign_up.setOnClickListener(
                 new Button.OnClickListener(){
                     public void onClick(View v) {
-                        TextView myTextView =
+                        TextView nameStr =
                                 (TextView)findViewById(R.id.name_text);
-                        Log.d(nameStr,myTextView.getText().toString() );
+                        Log.d(TAG,nameStr.getText().toString() );
                         //myTextView.setText("Signed up successfully!");
+                        TextView mobileStr =
+                                (TextView)findViewById(R.id.mobile_text);
+                        TextView emailStr =
+                                (TextView)findViewById(R.id.email_text);
+                        TextView postcode =
+                                (TextView)findViewById(R.id.postcode_text);
+                        //Log.d(TAG,mobileStr.toString() );
+                        //Log.d(TAG,emailStr.getText().toString() );
+                      //  Log.d(TAG,postcode.getText().toString() );
+
                     }
                 }
         );

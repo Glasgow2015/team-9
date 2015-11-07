@@ -53,7 +53,7 @@
             android:inputType="phone"
             android:imeOptions="actionNext"
             android:ems="10"
-            android:id="@+id/editText"
+            android:id="@+id/mobile_text"
             android:layout_weight="1"
             android:padding="10dp" />
 
@@ -77,7 +77,7 @@
             android:inputType="textEmailAddress"
             android:imeOptions="actionNext"
             android:ems="10"
-            android:id="@+id/editText2"
+            android:id="@+id/email_text"
             android:layout_weight="1" />
     </LinearLayout>
 
@@ -99,7 +99,7 @@
             android:inputType="textPostalAddress"
             android:ems="10"
             android:imeOptions="actionNext"
-            android:id="@+id/editText3"
+            android:id="@+id/postcode_text"
             android:layout_weight="1" />
     </LinearLayout>
 
