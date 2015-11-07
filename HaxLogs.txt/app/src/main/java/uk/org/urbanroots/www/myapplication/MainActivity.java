@@ -1,11 +1,10 @@
 package uk.org.urbanroots.www.myapplication;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,11 +26,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void handleOpenMenu(){
-        Button buttonOpenMenu = (Button)findViewById(R.id.button);
+        Button buttonOpenMenu = (Button)findViewById(R.id.reportbtn);
         buttonOpenMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Button!", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent();
+                MainActivity.this.startActivity(intent);
             }
         });
     }
