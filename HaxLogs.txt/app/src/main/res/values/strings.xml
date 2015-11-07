@@ -7,5 +7,6 @@
     <string name="postcode">Postcode :</string>
     <string name="report_issue">Report Issue</string>
     <string name="register">Register</string>
+    <string name="title_activity_sign_up">sign_up</string>
 
 </resources>
