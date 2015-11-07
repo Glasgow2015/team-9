@@ -23,14 +23,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        handleOpenMenu();
+        handleOpenReport();
 
 
     }
 
-    private void handleOpenMenu(){
-        Button buttonOpenMenu = (Button)findViewById(R.id.reportbtn);
-        buttonOpenMenu.setOnClickListener(new View.OnClickListener() {
+    private void handleOpenReport(){
+        Button buttonOpenReport = (Button)findViewById(R.id.reportbtn);
+        buttonOpenReport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,ReportActivity.class);
