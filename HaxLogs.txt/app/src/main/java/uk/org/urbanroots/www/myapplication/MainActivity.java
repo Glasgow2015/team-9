@@ -24,10 +24,20 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         handleOpenReport();
+        handleOpenRegister();
 
 
     }
-
+    private void handleOpenRegister(){
+        Button buttonOpenRegister = (Button)findViewById(R.id.registerbtn);
+        buttonOpenRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, sign_up.class);
+                MainActivity.this.startActivity(intent);
+            }
+        });
+    }
     private void handleOpenReport(){
         Button buttonOpenReport = (Button)findViewById(R.id.reportbtn);
         buttonOpenReport.setOnClickListener(new View.OnClickListener() {
