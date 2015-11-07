@@ -5,12 +5,8 @@
     <string name="email">Email :</string>
     <string name="mobile">Mobile :</string>
     <string name="postcode">Postcode :</string>
-<<<<<<< HEAD
     <string name="title_activity_report">ReportActivity</string>
-=======
     <string name="report_issue">Report Issue</string>
     <string name="register">Register</string>
     <string name="title_activity_sign_up">sign_up</string>
->>>>>>> fe10498bd26f0db118018c2e6f3ae1b1d88feddf
-
 </resources>
