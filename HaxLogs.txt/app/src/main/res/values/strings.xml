@@ -5,8 +5,8 @@
     <string name="email">Email :</string>
     <string name="mobile">Mobile :</string>
     <string name="postcode">Postcode :</string>
+    <string name="title_activity_report">ReportActivity</string>
     <string name="report_issue">Report Issue</string>
     <string name="register">Register</string>
     <string name="title_activity_sign_up">sign_up</string>
-
 </resources>
