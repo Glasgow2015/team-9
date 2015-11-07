@@ -1,9 +1,11 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Urban Roots</string>
     <string name="action_settings">Settings</string>
     <string name="sign_up">Name :</string>
     <string name="email">Email :</string>
     <string name="mobile">Mobile :</string>
     <string name="postcode">Postcode :</string>
+    <string name="report_issue">Report Issue</string>
+    <string name="register">Register</string>
 
 </resources>
