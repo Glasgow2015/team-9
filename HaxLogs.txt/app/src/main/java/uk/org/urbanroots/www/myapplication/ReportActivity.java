@@ -61,7 +61,7 @@ public class ReportActivity extends Activity implements OnClickListener {
     @SuppressWarnings("deprecation")
     public void setDate(View view) {
         showDialog(999);
-        Toast.makeText(getApplicationContext(), "ca", Toast.LENGTH_SHORT)
+        Toast.makeText(getApplicationContext(), "Date is set!", Toast.LENGTH_SHORT)
                 .show();
     }
     @Override
