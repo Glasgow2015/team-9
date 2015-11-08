@@ -32,7 +32,6 @@ public class sign_up extends Activity {
         send.setOnClickListener(
                 new Button.OnClickListener(){
 
-
                     public void onClick(View v) {
                         String TAG="";
                       TextView nameStr =
