@@ -125,16 +125,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/interests_text"
-            android:lines="1"
+            android:imeOptions="actionNext"
             android:layout_weight="1" />
     </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:layout_height="wrap_content">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/availability"
+            android:id="@+id/textView5" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/availability_text"
+            android:lines="1"
+            android:layout_weight="1" />
     </LinearLayout>
 
     <Button
@@ -142,6 +155,7 @@
         android:layout_height="wrap_content"
         android:text="Sign me up!"
         android:id="@+id/sign_up_button"
+        android:layout_marginTop="20dp"
         android:layout_gravity="center_horizontal"/>
 
 

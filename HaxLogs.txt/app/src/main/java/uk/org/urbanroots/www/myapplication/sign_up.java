@@ -1,6 +1,7 @@
 package uk.org.urbanroots.www.myapplication;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -20,6 +21,8 @@ public class sign_up extends Activity {
     String email;
     String postcode;
     String interests;
+    String availability;
+    SharedPreferences storage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,15 +48,30 @@ public class sign_up extends Activity {
                                 (TextView)findViewById(R.id.postcode_text);
                         TextView interestStr =
                                 (TextView)findViewById(R.id.interests_text);
+                        TextView availabilityStr =
+                                (TextView)findViewById(R.id.availability_text);
                         name=nameStr.getText().toString();
                         mobile=mobileStr.getText().toString();
                         email=emailStr.getText().toString();
                         postcode=postcodeStr.getText().toString();
                         interests=interestStr.getText().toString();
+                        availability=availabilityStr.getText().toString();
+
+                        // Saving data in xml in the background
+                        storage = getSharedPreferences(name, 0);
+                        SharedPreferences.Editor editor = storage.edit();
+                        editor.putString("mobile",mobile);
+                        editor.putString("email",email);
+                        editor.putString("postcode",postcode);
+                        editor.putString("interests",interests);
+                        editor.commit();
+                        System.out.println(storage.getString("email","no email"));
+
+                        
 
 if (!name.isEmpty() && (!mobile.isEmpty() || (email.contains("@")) ) ) {
     // Enter the sender email user name and password in gmail acc
-    final Mail la = new Mail("EnterUserName", "EnterPassword", name, mobile, email, postcode, interests);
+    final Mail la = new Mail("EmailUserName", "EmailPassword", name, mobile, email, postcode, interests,availability);
     try {
         la.send();
     } catch (Exception e) {

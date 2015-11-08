@@ -16,6 +16,8 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
+import android.content.SharedPreferences;
+import android.app.Activity;
 import android.widget.TextView;
 import android.widget.EditText;
 
@@ -68,10 +70,9 @@ public class Mail extends javax.mail.Authenticator {
     }
 
     // Create new mail instance passing the data we need.
-    public Mail(String user, String pass,String name,String mobile,String email,String postcode,String interests) {
+    public Mail(String user, String pass,String name,String mobile,String email,String postcode,String interests,String availability) {
         this();
-        _body ="New member name : "+name+"\n"+"Mobile number : "+mobile +"\n"+"Email : "+email + "\n"+"Postcode : "+postcode+"\n"+"Interests : "+interests ;
-
+        _body ="New member name : "+name+"\n"+"Mobile number : "+mobile +"\n"+"Email : "+email + "\n"+"Postcode : "+postcode+"\n"+"Interests : "+interests +"\n"+"Avalability : "+availability;
         _user = user;
         _pass = pass;
     }
