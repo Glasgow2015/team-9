@@ -49,7 +49,7 @@ public class Mail extends javax.mail.Authenticator {
 
         _user = ""; // username
         _pass = ""; // password
-        _from = "lvalais@gmail.com"; // email sent from
+        _from = "Sender"; // email sent from
         _subject = "New member"; // email subject
         _body = ""; // email body
 
@@ -83,18 +83,14 @@ public class Mail extends javax.mail.Authenticator {
         Session session = Session.getInstance(props, this);
 
         final MimeMessage msg = new MimeMessage(session);
-
         msg.setFrom(new InternetAddress(_from));
-
         InternetAddress[] addressTo = new InternetAddress[_to.length];
         for (int i = 0; i < _to.length; i++) {
             addressTo[i] = new InternetAddress(_to[i]);
         }
         msg.setRecipients(MimeMessage.RecipientType.TO, addressTo);
-
         msg.setSubject(_subject);
         msg.setSentDate(new Date());
-
 // setup message body
         BodyPart messageBodyPart = new MimeBodyPart();
         messageBodyPart.setText(_body);

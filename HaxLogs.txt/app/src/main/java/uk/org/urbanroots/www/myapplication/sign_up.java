@@ -52,21 +52,22 @@ public class sign_up extends Activity {
                         postcode=postcodeStr.getText().toString();
                         interests=interestStr.getText().toString();
 
-
-                        // Enter the sender email user name and password in gmail acc
-                        final Mail la=new Mail("EnterUserName","EnterPassword",name,mobile,email,postcode,interests);
-                        try {
-                            la.send();
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                         Toast.makeText(getApplicationContext(), "Signed up!", Toast.LENGTH_LONG).show();
+if (!name.isEmpty() &&( (!mobile.isEmpty() || (!email.isEmpty()) ) )) {
+    // Enter the sender email user name and password in gmail acc
+    final Mail la = new Mail("EnterUserName", "EnterPassword", name, mobile, email, postcode, interests);
+    try {
+        la.send();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    Toast.makeText(getApplicationContext(), "Signed up!", Toast.LENGTH_LONG).show();
+}
+else
+{
+    Toast.makeText(getApplicationContext(), "Failed!", Toast.LENGTH_LONG).show();
+}
                     }
-
-
-
                 }
-
         );
 
     }
