@@ -17,15 +17,6 @@ public class ReportActivity extends AppCompatActivity {
         setContentView(R.layout.test_report);
     }
 
-    private void handleOpenUpload(){
-        Button buttonOpenMenu = (Button)findViewById(R.id.button3);
-        buttonOpenMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent upload = new Intent(ReportActivity.this, ReportActivity.class);
-                ReportActivity.this.startActivity(upload);
-            }
-        });
-    }
+   
 
 }

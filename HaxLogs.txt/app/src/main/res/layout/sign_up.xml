@@ -125,7 +125,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/interests_text"
-            android:imeOptions=and
             android:lines="1"
             android:layout_weight="1" />
     </LinearLayout>
