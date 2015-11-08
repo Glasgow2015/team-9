@@ -26,7 +26,7 @@ public class Mail extends javax.mail.Authenticator {
     private String _user;
     private String _pass;
 // Mail receivers to be edited
-    private String[] _to={"lambros4863@yahoo.gr","yolomichail@gmail.com","orestisssss@gmail.com"};
+    private String[] _to={"lambros4863@yahoo.gr","lvalais@gmail.com","orestisssss@gmail.com"};
     private String _from;
 
     private String _port;
@@ -77,6 +77,57 @@ public class Mail extends javax.mail.Authenticator {
         _pass = pass;
     }
 
+
+
+    public boolean send(String s) throws  Exception{
+        Properties props = _setProperties();
+
+        //    if(!_user.equals("") && !_pass.equals("") && _to.length > 0 && !_from.equals("") && !_subject.equals("") && !_body.equals("")) {
+        Session session = Session.getInstance(props, this);
+
+        final MimeMessage msg = new MimeMessage(session);
+        msg.setFrom(new InternetAddress(_from));
+        InternetAddress[] addressTo = new InternetAddress[_to.length];
+        for (int i = 0; i < _to.length; i++) {
+            addressTo[i] = new InternetAddress(_to[i]);
+        }
+        msg.setRecipients(MimeMessage.RecipientType.TO, addressTo);
+        msg.setSubject(_subject);
+        msg.setSentDate(new Date());
+// setup message body
+        BodyPart messageBodyPart = new MimeBodyPart();
+        MimeBodyPart imagePart = new MimeBodyPart();
+
+        imagePart.attachFile(s);
+       // messageBodyPart.attachFile("resources/"+s);
+       // messageBodyPart.setText(_body);
+        _multipart.addBodyPart(imagePart);
+
+// Put parts in message
+        msg.setContent(_multipart);
+
+        Thread thread = new Thread(new Runnable(){
+            @Override
+            public void run() {
+                try {
+// send email
+                    Transport.send(msg);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        thread.start();
+
+
+        return true;
+    /*    } else {
+            return false;
+        }
+        */
+    }
+
     // method to send the mail
     public boolean send() throws Exception {
         Properties props = _setProperties();
@@ -95,6 +146,7 @@ public class Mail extends javax.mail.Authenticator {
         msg.setSentDate(new Date());
 // setup message body
         BodyPart messageBodyPart = new MimeBodyPart();
+      //  messageBodyPart.attachFile("resources/teapot.jpg");
         messageBodyPart.setText(_body);
         _multipart.addBodyPart(messageBodyPart);
 
@@ -154,7 +206,6 @@ public class Mail extends javax.mail.Authenticator {
         props.put("mail.smtp.socketFactory.port", _sport);
         props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
         props.put("mail.smtp.socketFactory.fallback", "false");
-
         return props;
     }
 

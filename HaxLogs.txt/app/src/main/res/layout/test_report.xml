@@ -1,37 +1,97 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-
-
-    <ToggleButton
-        android:layout_width="wrap_content"
+    android:layout_marginTop="50dp"
+    android:padding="5dp">
+    tools:context=".ReportActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="5dp"
+    android:padding="5dp"
+    android:transitionGroup="false"
+    android:touchscreenBlocksFocus="false">
+    <EditText
+        android:id="@+id/editTextSubject"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="New ToggleButton"
-        android:id="@+id/toggleButton"
-        android:layout_marginLeft="64dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="64dp" />
-
-    <ToggleButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New ToggleButton"
-        android:id="@+id/toggleButton3"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/button3"
-        android:layout_toEndOf="@+id/button3" />
-
+        android:layout_margin="5dp"
+        android:hint="Subject"
+        android:layout_marginTop="200dp"
+        android:singleLine="true" />
+    <EditText
+        android:id="@+id/editTextMessage"
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/editTextSubject"
+        android:gravity="top|left"
+        android:hint="type message here!"
+        android:inputType="textMultiLine"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp" />
     <Button
+        android:id="@+id/buttonSend"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:text="Send"
+        android:layout_below="@+id/longitude"
+        android:layout_alignRight="@+id/editTextMessage"
+        android:layout_alignEnd="@+id/editTextMessage"
+        android:layout_alignBottom="@+id/buttonAttachment" />
+    <Button
+        android:id="@+id/buttonAttachment"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="attachment"
+        android:layout_below="@+id/langitude"
+        android:layout_alignLeft="@+id/langitude"
+        android:layout_alignStart="@+id/langitude">
+    </Button>
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Upload Image"
-        android:id="@+id/button3"
-        android:layout_below="@+id/toggleButton"
-        android:layout_centerHorizontal="true"
-        android:onClick="upload"/>
-
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="x"
+        android:id="@+id/longitude"
+        android:layout_above="@+id/buttonAttachment"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="y"
+        android:id="@+id/langitude"
+        android:layout_below="@+id/editTextMessage"
+        android:layout_alignLeft="@+id/editTextMessage"
+        android:layout_alignStart="@+id/editTextMessage" />
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="setDate"
+        android:text="@string/date_button_set"
+        android:layout_below="@+id/longitude"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/date_view_set"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_below="@+id/buttonAttachment"
+        android:layout_toLeftOf="@+id/textView3"
+        android:layout_toStartOf="@+id/textView3"
+        android:layout_marginTop="48dp" />
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/date_selected"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_toRightOf="@+id/buttonAttachment"
+        android:layout_toStartOf="@+id/buttonSend"
+        android:layout_toLeftOf="@+id/buttonSend" />
 </RelativeLayout>

@@ -71,10 +71,11 @@ public class sign_up extends Activity {
 
 if (!name.isEmpty() && (!mobile.isEmpty() || (email.contains("@")) ) ) {
     // Enter the sender email user name and password in gmail acc
-    final Mail la = new Mail("EmailUserName", "EmailPassword", name, mobile, email, postcode, interests,availability);
+    final Mail la = new Mail("EnterYourGmailUserName", "EnterYourGmailPassWord", name, mobile, email, postcode, interests,availability);
     try {
         la.send();
-    } catch (Exception e) {
+    } catch (Exception e)
+    {
         e.printStackTrace();
     }
     Toast.makeText(getApplicationContext(), "Signed up!", Toast.LENGTH_LONG).show();
