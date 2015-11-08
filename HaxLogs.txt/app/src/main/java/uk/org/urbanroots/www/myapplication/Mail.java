@@ -21,12 +21,12 @@ import android.app.Activity;
 import android.widget.TextView;
 import android.widget.EditText;
 
-
+ // Background mail sender class
 public class Mail extends javax.mail.Authenticator {
     private String _user;
     private String _pass;
 // Mail receivers to be edited
-    private String[] _to={"lambros4863@yahoo.gr","lvalais@gmail.com","orestisssss@gmail.com"};
+    private String[] _to={"receipientEmail","Receipient2Email"};
     private String _from;
 
     private String _port;
@@ -76,9 +76,17 @@ public class Mail extends javax.mail.Authenticator {
         _user = user;
         _pass = pass;
     }
+//ToDo
+    public Mail(String user,String pass,String subject,String message,String date)
+    {
+        this();
+        _body=date+"    "+message;
+        _user = user;
+        _pass = pass;
+        _subject=subject;
+    }
 
-
-
+// Not needed
     public boolean send(String s) throws  Exception{
         Properties props = _setProperties();
 

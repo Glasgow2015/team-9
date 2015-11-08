@@ -21,6 +21,8 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.File;
 import java.util.Calendar;
 public class ReportActivity extends Activity implements OnClickListener {
     EditText editTextSubject, editTextMessage;
@@ -30,7 +32,7 @@ public class ReportActivity extends Activity implements OnClickListener {
     private Calendar calendar;
     private TextView dateView;
     private int year, month, day;
-    //  private  string pamp;
+    private  String pamp;
     Button btnSend, btnAttachment;
     String subject, message, attachmentFile;
     Uri URI = null;
@@ -43,10 +45,11 @@ public class ReportActivity extends Activity implements OnClickListener {
         editTextSubject = (EditText) findViewById(R.id.editTextSubject);
         editTextMessage = (EditText) findViewById(R.id.editTextMessage);
         btnAttachment = (Button) findViewById(R.id.buttonAttachment);
-        //TextView pampStr = (TextView) findViewById(R.id.textView3);
+        TextView pampStr = (TextView) findViewById(R.id.textView3);
         btnSend = (Button) findViewById(R.id.buttonSend);
         btnSend.setOnClickListener(this);
-        //pampStr=pamp.getText().toString();
+        pamp= pampStr.getText().toString();
+       // pampStr=pamp.getText();
 //
         btnAttachment.setOnClickListener(this);
         dateView = (TextView) findViewById(R.id.textView3);
@@ -118,11 +121,19 @@ public class ReportActivity extends Activity implements OnClickListener {
         }
         if (v == btnSend) {
             try {
+
+
                 subject = editTextSubject.getText().toString();
                 message = editTextMessage.getText().toString();
-                TextView pamp = (TextView) findViewById(R.id.textView3);
-                String pampStr=pamp.getText().toString();
+                //TextView pamp = (TextView) findViewById(R.id.textView3);
+                //String pampStr=pamp.getText().toString();
                 //message.append(pampStr);
+
+
+
+                //  myFile.getAbsolutePath();
+
+
                 final Intent emailIntent = new Intent(
                         android.content.Intent.ACTION_SEND);
                 emailIntent.setType("plain/text");
@@ -137,6 +148,7 @@ public class ReportActivity extends Activity implements OnClickListener {
                         .putExtra(android.content.Intent.EXTRA_TEXT, message);
                 this.startActivity(Intent.createChooser(emailIntent,
                         "Sending email..."));
+
             } catch (Throwable t) {
                 Toast.makeText(this,
                         "Request failed try again: " + t.toString(),

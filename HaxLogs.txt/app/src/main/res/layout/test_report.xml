@@ -52,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="x"
+        android:text=""
         android:id="@+id/longitude"
         android:layout_above="@+id/buttonAttachment"
         android:layout_centerHorizontal="true" />
@@ -60,7 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="y"
+        android:text=""
         android:id="@+id/langitude"
         android:layout_below="@+id/editTextMessage"
         android:layout_alignLeft="@+id/editTextMessage"
