@@ -52,7 +52,7 @@ public class sign_up extends Activity {
                         postcode=postcodeStr.getText().toString();
                         interests=interestStr.getText().toString();
 
-if (!name.isEmpty() &&( (!mobile.isEmpty() || (!email.isEmpty()) ) )) {
+if (!name.isEmpty() && (!mobile.isEmpty() || (email.contains("@")) ) ) {
     // Enter the sender email user name and password in gmail acc
     final Mail la = new Mail("EnterUserName", "EnterPassword", name, mobile, email, postcode, interests);
     try {
