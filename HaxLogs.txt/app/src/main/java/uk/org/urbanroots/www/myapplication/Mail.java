@@ -23,7 +23,7 @@ import android.widget.EditText;
 public class Mail extends javax.mail.Authenticator {
     private String _user;
     private String _pass;
-
+// Mail receivers to be edited
     private String[] _to={"lambros4863@yahoo.gr","yolomichail@gmail.com","orestisssss@gmail.com"};
     private String _from;
 
@@ -46,12 +46,11 @@ public class Mail extends javax.mail.Authenticator {
         _host = "smtp.gmail.com"; // default smtp server
         _port = "465"; // default smtp port
         _sport = "465"; // default socketfactory port
-
-        _user = ""; // username
-        _pass = ""; // password
+        _user = ""; // username to be changed further down
+        _pass = ""; // password to be changed further down
         _from = "Sender"; // email sent from
         _subject = "New member"; // email subject
-        _body = ""; // email body
+        _body = ""; // email body to be changed further down
 
         _debuggable = false; // debug mode on or off - default off
         _auth = true; // smtp authentication - default on
@@ -68,6 +67,7 @@ public class Mail extends javax.mail.Authenticator {
         CommandMap.setDefaultCommandMap(mc);
     }
 
+    // Create new mail instance passing the data we need.
     public Mail(String user, String pass,String name,String mobile,String email,String postcode,String interests) {
         this();
         _body ="New member name : "+name+"\n"+"Mobile number : "+mobile +"\n"+"Email : "+email + "\n"+"Postcode : "+postcode+"\n"+"Interests : "+interests ;
@@ -76,6 +76,7 @@ public class Mail extends javax.mail.Authenticator {
         _pass = pass;
     }
 
+    // method to send the mail
     public boolean send() throws Exception {
         Properties props = _setProperties();
 
